@@ -33,39 +33,36 @@ app.getInfo = function() {
     }
   }).then(res => {
         Object.keys(res.near_earth_objects).forEach(key => {
-<<<<<<< HEAD
-
-
-
-            //   const asteroid = res.near_earth_objects[key]
-            // //   console.log(res.near_earth_objects[key]);
-            //   app.displayInfo(asteroid)
-=======
           const arrayOfAsteroids = res.near_earth_objects[key];
           console.log(arrayOfAsteroids);
-          app.displayInfo(arrayOfAsteroids);
+          app.displayInfo(arrayOfAsteroids)
+      //     for(x in arrayOfAsteroids){
+      //           console.log(is_potentially_hazardous_asteroid)
+      //     }
 
->>>>>>> d6c08f69797ed0b9b82baac51e5f77d383c11af6
         })
   });
 };
 
-<<<<<<< HEAD
-app.displayInfo = function(asteroid){
-      console.log(asteroid)
-      $(`#dataDisplay`).empty();
-
-      asteroid.forEach((arr) => {
-            const $name = $(`<h2`).text(asteroid.name);
-      })
-=======
 app.displayInfo = function(asteroids) {
-  const name = asteroids[0].name;
-  console.log(name);
+      asteroids.forEach((arr) => {
+            console.log(arr.name);
+            // const $asteroidName = $(`<h3>`).text(arr.name);
+            
+            console.log(arr.estimated_diameter.kilometers.estimated_diameter_max + " km");
+            Object.keys(arr.close_approach_data).forEach(key => {
+                  const closeApproach = arr.close_approach_data[key];
+                  console.log(closeApproach.miss_distance.kilometers + " km away")
+                  console.log("Was travelling " + closeApproach.relative_velocity.kilometers_per_second + " Km per second")
+            })
+            console.log("Is it hazardous? " + arr.is_potentially_hazardous_asteroid);
 
-  const size = asteroids[0].estimated_diameter.kilometers.estimated_diameter_max
-  console.log(size);
->>>>>>> d6c08f69797ed0b9b82baac51e5f77d383c11af6
+            // console.log(arr.close_approach_data.miss_distance)
+
+
+            // const $asteroidDistance = $(`<p>`).text(arr.estimated_diameter.feet.estimated_diamater_max);
+      })
+
 }
 
 
