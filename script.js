@@ -30,11 +30,9 @@ app.getInfo = function() {
       end_date: date()
     }
   }).then(res => {
-        let near = res
-        Object.keys(near.near_earth_objects).forEach(key => {
-              console.log(near.near_earth_objects[key]);
+        Object.keys(res.near_earth_objects).forEach(key => {
+              
         })
-        console.log(near)
   });
 };
 
