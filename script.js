@@ -19,6 +19,8 @@ const date = function() {
   return today;
 };
 
+const x = date();
+
 app.getInfo = function() {
   $.ajax({
     url: "https://api.nasa.gov/neo/rest/v1/feed?",
@@ -31,16 +33,24 @@ app.getInfo = function() {
     }
   }).then(res => {
         Object.keys(res.near_earth_objects).forEach(key => {
+<<<<<<< HEAD
 
 
 
             //   const asteroid = res.near_earth_objects[key]
             // //   console.log(res.near_earth_objects[key]);
             //   app.displayInfo(asteroid)
+=======
+          const arrayOfAsteroids = res.near_earth_objects[key];
+          console.log(arrayOfAsteroids);
+          app.displayInfo(arrayOfAsteroids);
+
+>>>>>>> d6c08f69797ed0b9b82baac51e5f77d383c11af6
         })
   });
 };
 
+<<<<<<< HEAD
 app.displayInfo = function(asteroid){
       console.log(asteroid)
       $(`#dataDisplay`).empty();
@@ -48,12 +58,21 @@ app.displayInfo = function(asteroid){
       asteroid.forEach((arr) => {
             const $name = $(`<h2`).text(asteroid.name);
       })
+=======
+app.displayInfo = function(asteroids) {
+  const name = asteroids[0].name;
+  console.log(name);
+
+  const size = asteroids[0].estimated_diameter.kilometers.estimated_diameter_max
+  console.log(size);
+>>>>>>> d6c08f69797ed0b9b82baac51e5f77d383c11af6
 }
 
 
 
 app.init = function() {
   app.getInfo();
+  app.displayInfo();
 };
 
 
