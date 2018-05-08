@@ -31,10 +31,24 @@ app.getInfo = function() {
     }
   }).then(res => {
         Object.keys(res.near_earth_objects).forEach(key => {
-              
+
+
+
+            //   const asteroid = res.near_earth_objects[key]
+            // //   console.log(res.near_earth_objects[key]);
+            //   app.displayInfo(asteroid)
         })
   });
 };
+
+app.displayInfo = function(asteroid){
+      console.log(asteroid)
+      $(`#dataDisplay`).empty();
+
+      asteroid.forEach((arr) => {
+            const $name = $(`<h2`).text(asteroid.name);
+      })
+}
 
 
 
