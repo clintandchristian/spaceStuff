@@ -19,6 +19,8 @@ const date = function() {
   return today;
 };
 
+const x = date();
+
 app.getInfo = function() {
   $.ajax({
     url: "https://api.nasa.gov/neo/rest/v1/feed?",
@@ -31,7 +33,11 @@ app.getInfo = function() {
     }
   }).then(res => {
     const nearObjects = res.near_earth_objects;
-    console.log(nearObjects);
+
+
+
+    
+    
   });
 };
 
@@ -45,19 +51,5 @@ $(function() {
 
 //   get current date
 //   get info on all asteroids to pass by today
-//
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth() + 1; //January is 0!
-var yyyy = today.getFullYear();
 
-if (dd < 10) {
-  dd = "0" + dd;
-}
 
-if (mm < 10) {
-  mm = "0" + mm;
-}
-
-today = yyyy + "-" + mm + "-" + dd;
-console.log(today);
