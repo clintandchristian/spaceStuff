@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+
+
+    <script>
+    
+        const app = {};
+
+        app.getInfo = function() {
+            $.ajax({
+                url:'https://api.nasa.gov/neo/rest/v1/neo/3750665?api_key=o9VA2EVoF5h978FUEN79Xxi69MSw6jwsUZOFR1VD',
+                dataType: 'json',
+                method: 'GET',
+                q: ''
+                
+            })
+            .then((res) => {
+                console.log(res);
+            })
+        }
+
+        app.init = function() {
+            app.getInfo();
+        }
+
+        $(function() {
+            app.init();
+        })
+    
+    
+    
+    </script>
+</body>
+</html>
