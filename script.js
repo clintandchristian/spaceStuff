@@ -33,15 +33,27 @@ app.getInfo = function() {
     }
   }).then(res => {
         Object.keys(res.near_earth_objects).forEach(key => {
-              
+          const arrayOfAsteroids = res.near_earth_objects[key];
+          console.log(arrayOfAsteroids);
+          app.displayInfo(arrayOfAsteroids);
+
         })
   });
 };
+
+app.displayInfo = function(asteroids) {
+  const name = asteroids[0].name;
+  console.log(name);
+
+  const size = asteroids[0].estimated_diameter.kilometers.estimated_diameter_max
+  console.log(size);
+}
 
 
 
 app.init = function() {
   app.getInfo();
+  app.displayInfo();
 };
 
 
