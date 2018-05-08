@@ -32,18 +32,22 @@ app.getInfo = function() {
       end_date: date()
     }
   }).then(res => {
-    const nearObjects = res.near_earth_objects;
-
-
-
-    
-    
+        let near = res
+        Object.keys(near.near_earth_objects).forEach(key => {
+              console.log(near.near_earth_objects[key]);
+        })
+        console.log(near)
   });
 };
+
+
 
 app.init = function() {
   app.getInfo();
 };
+
+
+
 
 $(function() {
   app.init();
@@ -51,5 +55,3 @@ $(function() {
 
 //   get current date
 //   get info on all asteroids to pass by today
-
-
