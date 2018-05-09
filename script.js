@@ -32,6 +32,7 @@ app.getInfo = function() {
       end_date: date()
     }
   }).then(res => {
+    console.log(res);
         Object.keys(res.near_earth_objects).forEach(key => {
           const arrayOfAsteroids = res.near_earth_objects[key];
           console.log(arrayOfAsteroids);
@@ -49,13 +50,13 @@ app.displayInfo = function(asteroids) {
             console.log(arr.name);
             // const $asteroidName = $(`<h3>`).text(arr.name);
             
-            console.log(arr.estimated_diameter.kilometers.estimated_diameter_max + " km");
+            console.log("The diameter of this asteroid is " + arr.estimated_diameter.kilometers.estimated_diameter_max + " km");
             Object.keys(arr.close_approach_data).forEach(key => {
                   const closeApproach = arr.close_approach_data[key];
                   console.log(closeApproach.miss_distance.kilometers + " km away")
                   console.log("Was travelling " + closeApproach.relative_velocity.kilometers_per_second + " Km per second")
             })
-            console.log("Is it hazardous? " + arr.is_potentially_hazardous_asteroid);
+            console.log("Is it potentially hazardous? " + arr.is_potentially_hazardous_asteroid);
 
             // console.log(arr.close_approach_data.miss_distance)
 
