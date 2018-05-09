@@ -47,16 +47,32 @@ app.getInfo = function() {
 
 app.displayInfo = function(asteroids) {
       asteroids.forEach((arr) => {
-            console.log(arr.name);
+            // console.log(arr.name);
             // const $asteroidName = $(`<h3>`).text(arr.name);
+            const astName = arr.name;
+            // const $astNameDisplay = $(`.name`).text(astName);
+            console.log(astName);
+
+            const infoOfIndiv = `<li>${astName}</li>`
+            console.log(infoOfIndiv);
+            $('.asteroidList').append(infoOfIndiv);
             
-            console.log("The diameter of this asteroid is " + arr.estimated_diameter.kilometers.estimated_diameter_max + " km");
+            const astSize = arr.estimated_diameter.kilometers.estimated_diameter_max;
+            // console.log("The diameter of this asteroid is " + astSize + " Km")
+
+
             Object.keys(arr.close_approach_data).forEach(key => {
                   const closeApproach = arr.close_approach_data[key];
-                  console.log(closeApproach.miss_distance.kilometers + " km away")
-                  console.log("Was travelling " + closeApproach.relative_velocity.kilometers_per_second + " Km per second")
+
+                  const astSpeed = closeApproach.relative_velocity.kilometers_per_second;
+                  
+                  const astDistance = closeApproach.miss_distance.kilometers;
             })
-            console.log("Is it potentially hazardous? " + arr.is_potentially_hazardous_asteroid);
+            const astHazardous = arr.is_potentially_hazardous_asteroid;
+
+
+
+
 
             // console.log(arr.close_approach_data.miss_distance)
 
@@ -64,6 +80,10 @@ app.displayInfo = function(asteroids) {
             // const $asteroidDistance = $(`<p>`).text(arr.estimated_diameter.feet.estimated_diamater_max);
       })
 
+}
+
+app.events = function() {
+  
 }
 
 
