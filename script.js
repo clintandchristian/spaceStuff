@@ -29,7 +29,7 @@ app.getInfo = function() {
     data: {
       api_key: "o9VA2EVoF5h978FUEN79Xxi69MSw6jwsUZOFR1VD",
       // start_date: '2000-01-01'
-      end_date: date()
+      end_date: '2018-05-14'
     }
   }).then(res => {
     console.log(res);
