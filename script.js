@@ -19,6 +19,7 @@ const date = function() {
   return today;
 };
 
+
 const x = date();
 
 app.getInfo = function() {
@@ -44,14 +45,18 @@ app.getInfo = function() {
         })
   });
 };
-
+avgSize = []
+avgDist = []
+avgSpeed = []
 app.displayInfo = function(asteroids) {
       asteroids.forEach((arr) => {
             
-            const astName = arr.name;
-            // console.log(astName);
+            const astName = arr.name.replace(/\s+/g, "");
+            console.log(astName);
+            // str.replace(/\s+/g, "");
 
             const astSize = arr.estimated_diameter.kilometers.estimated_diameter_max;
+            avgSize.push(astSize)
             // console.log(astSize)
             
             const astDistance = arr.close_approach_data[0].miss_distance.kilometers
@@ -72,38 +77,34 @@ app.displayInfo = function(asteroids) {
                         <p>Potentially Hazardous: ${astHazardous}</p>
                   </div>`
             )
+            // console.log(astName)
 
-
-
-
-
-
-            
-
-            
-
-            // const infoOfIndiv = `<li>${astName}</li>`
-            // $('.asteroidList').append(infoOfIndiv);
-            
-
+            const infoOfIndiv = `<li>${astName}</li>`
+            $('.asteroidList').append(infoOfIndiv);
       })
 
+
+      
+      avgSizeAdded = avgSize.reduce((prev,curr) => {
+            return prev + curr;
+      });
+      avgSizeTrue = avgSizeAdded / avgSize.length
+      console.log(avgSizeTrue)
 }
 
 // This function listens to click on unordered list and 
 app.events = function() {
   $('ul').on('click', 'li', function() {
     // console.log(e.currentTarget);
-    const selectedAst = $(this).text();
-    console.log(selectedAst)
-    $(".rightSide").append()
+        const selectedAst = $(this).text().replace(/\s+/g, "");
+      console.log(selectedAst)
+
+    $("."+selectedAst).addClass("active");
     // app.individualInfo(selectedAst);
   })
 }
 
-app.individualInfo = function(e) {
-  // console.log(e);
-}
+
 
 
 app.init = function() {

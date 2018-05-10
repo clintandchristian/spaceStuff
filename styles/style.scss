@@ -21,5 +21,11 @@ header{
             background:grey;
             border:1px solid red;
             width:40%;
+            .rightSideInfo{
+                  display:none;
+            }
       }
+}
+.active{
+      display:block;
 }
