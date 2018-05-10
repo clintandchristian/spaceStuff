@@ -21,6 +21,7 @@ const date = function () {
 
 
 const x = date();
+console.log(x)
 
 app.getInfo = function () {
       $.ajax({
@@ -29,14 +30,14 @@ app.getInfo = function () {
             method: "GET",
             data: {
                   api_key: "o9VA2EVoF5h978FUEN79Xxi69MSw6jwsUZOFR1VD",
-                  // start_date: '2000-01-01'
-                  end_date: '2018-05-15'
+                  start_date: x,
+                  end_date: x
             }
       }).then(res => {
             // console.log(res);
             Object.keys(res.near_earth_objects).forEach(key => {
                   const arrayOfAsteroids = res.near_earth_objects[key];
-                  // console.log(arrayOfAsteroids);
+                  console.log(arrayOfAsteroids);
                   app.displayInfo(arrayOfAsteroids)
                   //     for(x in arrayOfAsteroids){
                   //           console.log(is_potentially_hazardous_asteroid)
