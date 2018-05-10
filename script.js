@@ -96,7 +96,7 @@ app.displayInfo = function(asteroids) {
 app.events = function() {
   $('ul').on('click', 'li', function() {
     // console.log(e.currentTarget);
-        const selectedAst = $(this).text().replace(/\s+/g, "");
+        const selectedAst = $(this).text().replace(/\3/g, "");
       console.log(selectedAst)
 
     $("."+selectedAst).addClass("active");
