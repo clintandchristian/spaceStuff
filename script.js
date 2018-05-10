@@ -51,16 +51,20 @@ app.displayInfo = function(asteroids) {
             // const $asteroidName = $(`<h3>`).text(arr.name);
             const astName = arr.name;
             // const $astNameDisplay = $(`.name`).text(astName);
-            console.log(astName);
+            // console.log(astName);
+
+            
 
             const infoOfIndiv = `<li>${astName}</li>`
-            console.log(infoOfIndiv);
+            // console.log(infoOfIndiv);
             $('.asteroidList').append(infoOfIndiv);
             
             const astSize = arr.estimated_diameter.kilometers.estimated_diameter_max;
             // console.log("The diameter of this asteroid is " + astSize + " Km")
 
+            // console.log(clickedListItem.size);
 
+            // console.log(arr.close_approach_data);
             Object.keys(arr.close_approach_data).forEach(key => {
                   const closeApproach = arr.close_approach_data[key];
 
@@ -82,15 +86,24 @@ app.displayInfo = function(asteroids) {
 
 }
 
+
 app.events = function() {
-  
+  $('ul').on('click', 'li', function() {
+    // console.log(e.currentTarget);
+    const selectedAst = $(this).text();
+    console.log(selectedAst);
+    // app.individualInfo(selectedAst);
+  })
 }
 
+app.individualInfo = function(e) {
+  // console.log(e);
+}
 
 
 app.init = function() {
   app.getInfo();
-  app.displayInfo();
+  app.events();
 };
 
 
