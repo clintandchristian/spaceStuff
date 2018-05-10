@@ -6,6 +6,12 @@ header{
       background:black;
       height:200px;
       width:100%;
+      .todayAverage {
+            width: 30%;
+            border: 1px solid red;
+            margin: 0 auto;
+            background: yellow;
+      }
 }
 
 .wrapper{
@@ -24,8 +30,10 @@ header{
             .rightSideInfo{
                   display:none;
             }
+            .active{
+                  display:block;
+                  background: red;
+            }
       }
 }
-.active{
-      display:block;
-}
+
