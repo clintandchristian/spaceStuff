@@ -33,10 +33,10 @@ app.getInfo = function() {
       end_date: '2018-05-14'
     }
   }).then(res => {
-    console.log(res);
+    // console.log(res);
         Object.keys(res.near_earth_objects).forEach(key => {
           const arrayOfAsteroids = res.near_earth_objects[key];
-          console.log(arrayOfAsteroids);
+          // console.log(arrayOfAsteroids);
           app.displayInfo(arrayOfAsteroids)
       //     for(x in arrayOfAsteroids){
       //           console.log(is_potentially_hazardous_asteroid)
@@ -51,8 +51,8 @@ avgSpeed = []
 app.displayInfo = function(asteroids) {
       asteroids.forEach((arr) => {
             
-            const astName = arr.name.replace(/\s+/g, "");
-            console.log(astName);
+            const astName = arr.name.replace(/\s+/g, "").replace(/\(|\)/g, '');
+            // console.log(astName);
             // str.replace(/\s+/g, "");
 
             const astSize = arr.estimated_diameter.kilometers.estimated_diameter_max;
@@ -60,9 +60,13 @@ app.displayInfo = function(asteroids) {
             // console.log(astSize)
             
             const astDistance = arr.close_approach_data[0].miss_distance.kilometers
+            const astDisToNumber = parseInt(astDistance);
+            avgDist.push(astDisToNumber)
             // console.log(astDistance)
 
             const astSpeed = arr.close_approach_data[0].relative_velocity.kilometers_per_second
+            const astSpeedToNumber = parseInt(astSpeed);
+            avgSpeed.push(astSpeedToNumber)
             // console.log(astSpeed)
 
             const astHazardous = arr.is_potentially_hazardous_asteroid
@@ -89,17 +93,31 @@ app.displayInfo = function(asteroids) {
             return prev + curr;
       });
       avgSizeTrue = avgSizeAdded / avgSize.length
-      console.log(avgSizeTrue)
+      // console.log(avgSizeTrue)
+
+      avgDistAdded = avgDist.reduce((prev,curr) => {
+          return prev + curr;
+      });
+      avgDistTrue = avgDistAdded / avgDist.length
+      // console.log(avgDistTrue)
+
+      avgSpeedAdded = avgSpeed.reduce((prev,curr) => {
+        return prev + curr;
+      })
+      avgSpeedTrue = avgSpeedAdded / avgSpeed.length
+      // console.log(avgSpeedTrue)
 }
 
-
+// This function listens to click on unordered list and 
 app.events = function() {
   $('ul').on('click', 'li', function() {
     // console.log(e.currentTarget);
-        const selectedAst = $(this).text().replace(/\s+/g, "");
-      console.log(selectedAst)
+    const selectedAst = $(this).text().replace(/\s+/g, "").replace(/\(|\)/g, '');
+      console.log(selectedAst);
+    $(`.rightSideInfo`).removeClass("active")
+    $(`div.${selectedAst}`).toggleClass("active");
+    // $(`div.${selectedAst}`).toggleClass("")
 
-    $("."+selectedAst).addClass("active");
     // app.individualInfo(selectedAst);
   })
 }
