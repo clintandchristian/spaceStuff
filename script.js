@@ -47,41 +47,45 @@ app.getInfo = function() {
 
 app.displayInfo = function(asteroids) {
       asteroids.forEach((arr) => {
-            // console.log(arr.name);
-            // const $asteroidName = $(`<h3>`).text(arr.name);
+            
             const astName = arr.name;
-            // const $astNameDisplay = $(`.name`).text(astName);
             // console.log(astName);
 
-            
-
-            const infoOfIndiv = `<li>${astName}</li>`
-            // console.log(infoOfIndiv);
-            $('.asteroidList').append(infoOfIndiv);
-            
             const astSize = arr.estimated_diameter.kilometers.estimated_diameter_max;
-            // console.log("The diameter of this asteroid is " + astSize + " Km")
+            // console.log(astSize)
+            
+            const astDistance = arr.close_approach_data[0].miss_distance.kilometers
+            // console.log(astDistance)
 
-            // console.log(clickedListItem.size);
+            const astSpeed = arr.close_approach_data[0].relative_velocity.kilometers_per_second
+            // console.log(astSpeed)
 
-            // console.log(arr.close_approach_data);
-            Object.keys(arr.close_approach_data).forEach(key => {
-                  const closeApproach = arr.close_approach_data[key];
+            const astHazardous = arr.is_potentially_hazardous_asteroid
+            // console.log(astHazardous)
 
-                  const astSpeed = closeApproach.relative_velocity.kilometers_per_second;
-                  
-                  const astDistance = closeApproach.miss_distance.kilometers;
-            })
-            const astHazardous = arr.is_potentially_hazardous_asteroid;
-
-
-
-
-
-            // console.log(arr.close_approach_data.miss_distance)
+            $(".rightSide").append(`
+                  <div class="${astName} rightSideInfo">
+                        <h2>${astName}</h2>
+                        <p>Estimated Diameter: ${astSize} km</p>
+                        <p>Miss Distance: ${astDistance} km</p>
+                        <p>Speed: ${astSpeed} km/s</p>
+                        <p>Potentially Hazardous: ${astHazardous}</p>
+                  </div>`
+            )
 
 
-            // const $asteroidDistance = $(`<p>`).text(arr.estimated_diameter.feet.estimated_diamater_max);
+
+
+
+
+            
+
+            
+
+            // const infoOfIndiv = `<li>${astName}</li>`
+            // $('.asteroidList').append(infoOfIndiv);
+            
+
       })
 
 }
@@ -91,7 +95,8 @@ app.events = function() {
   $('ul').on('click', 'li', function() {
     // console.log(e.currentTarget);
     const selectedAst = $(this).text();
-    console.log(selectedAst);
+    console.log(selectedAst)
+    $(".rightSide").append()
     // app.individualInfo(selectedAst);
   })
 }
