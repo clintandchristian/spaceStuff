@@ -47,16 +47,14 @@ app.getInfo = function() {
 
 app.displayInfo = function(asteroids) {
       asteroids.forEach((arr) => {
+            console.log(arr);
             // console.log(arr.name);
             // const $asteroidName = $(`<h3>`).text(arr.name);
             const astName = arr.name;
             // const $astNameDisplay = $(`.name`).text(astName);
-            // console.log(astName);
-
-            
+            console.log(astName);
 
             const infoOfIndiv = `<li>${astName}</li>`
-            // console.log(infoOfIndiv);
             $('.asteroidList').append(infoOfIndiv);
             
             const astSize = arr.estimated_diameter.kilometers.estimated_diameter_max;
@@ -65,13 +63,16 @@ app.displayInfo = function(asteroids) {
             // console.log(clickedListItem.size);
 
             // console.log(arr.close_approach_data);
-            Object.keys(arr.close_approach_data).forEach(key => {
-                  const closeApproach = arr.close_approach_data[key];
+            const astSpeed = arr.close_approach_data[0].relative_velocity.kilometers_per_second; 
+            console.log(astSpeed);
 
-                  const astSpeed = closeApproach.relative_velocity.kilometers_per_second;
+            // Object.keys(arr.close_approach_data).forEach(key => {
+            //       const closeApproach = arr.close_approach_data[key];
+
+            //       const astSpeed = closeApproach.relative_velocity.kilometers_per_second;
                   
-                  const astDistance = closeApproach.miss_distance.kilometers;
-            })
+            //       const astDistance = closeApproach.miss_distance.kilometers;
+            // })
             const astHazardous = arr.is_potentially_hazardous_asteroid;
 
 
@@ -86,7 +87,7 @@ app.displayInfo = function(asteroids) {
 
 }
 
-
+// This function listens to click on unordered list and 
 app.events = function() {
   $('ul').on('click', 'li', function() {
     // console.log(e.currentTarget);
