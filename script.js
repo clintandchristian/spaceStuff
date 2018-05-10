@@ -29,14 +29,14 @@ app.getInfo = function() {
     method: "GET",
     data: {
       api_key: "o9VA2EVoF5h978FUEN79Xxi69MSw6jwsUZOFR1VD",
-      // start_date: '2000-01-01'
-      end_date: '2018-05-14'
+      start_date: x,
+      end_date: x
     }
   }).then(res => {
     // console.log(res);
         Object.keys(res.near_earth_objects).forEach(key => {
           const arrayOfAsteroids = res.near_earth_objects[key];
-          // console.log(arrayOfAsteroids);
+          console.log(arrayOfAsteroids);
           app.displayInfo(arrayOfAsteroids)
       //     for(x in arrayOfAsteroids){
       //           console.log(is_potentially_hazardous_asteroid)
@@ -57,7 +57,6 @@ app.displayInfo = function(asteroids) {
 
             const astSize = arr.estimated_diameter.kilometers.estimated_diameter_max;
             avgSize.push(astSize)
-            // console.log(astSize)
             
             const astDistance = arr.close_approach_data[0].miss_distance.kilometers
             const astDisToNumber = parseInt(astDistance);
@@ -92,20 +91,20 @@ app.displayInfo = function(asteroids) {
       avgSizeAdded = avgSize.reduce((prev,curr) => {
             return prev + curr;
       });
-      avgSizeTrue = avgSizeAdded / avgSize.length
-      // console.log(avgSizeTrue)
+      avgSizeTrue = Math.round((avgSizeAdded / avgSize.length) * 100) / 100
+      $('.averageSize').append(`Average Size: ${avgSizeTrue} km`);
 
       avgDistAdded = avgDist.reduce((prev,curr) => {
           return prev + curr;
       });
-      avgDistTrue = avgDistAdded / avgDist.length
-      // console.log(avgDistTrue)
+      avgDistTrue = Math.round((avgDistAdded / avgDist.length) * 100) / 100
+      $('.averageDistance').append(`Average Distance: ${avgDistTrue} km away from Earth`);
 
       avgSpeedAdded = avgSpeed.reduce((prev,curr) => {
         return prev + curr;
       })
-      avgSpeedTrue = avgSpeedAdded / avgSpeed.length
-      // console.log(avgSpeedTrue)
+      avgSpeedTrue = Math.round((avgSpeedAdded / avgSpeed.length) * 100) / 100
+      $('.averageSpeed').append(`Average Speed: ${avgSpeedTrue} km/s`);
 }
 
 // This function listens to click on unordered list and 

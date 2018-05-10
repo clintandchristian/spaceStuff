@@ -4,14 +4,8 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 
 header{
       background:black;
-      height:200px;
+      height:300px;
       width:100%;
-      .todayAverage {
-            width: 30%;
-            border: 1px solid red;
-            margin: 0 auto;
-            background: yellow;
-      }
 }
 
 .wrapper{
@@ -22,11 +16,25 @@ header{
       .leftSide{
             background:lightblue;
             width:60%;
+            .asteroidList{
+                  list-style: none;
+                  li {
+                        padding: 10px 0;
+                        border: 3px solid grey;
+                        margin-bottom: 10px;
+                  }
+            }
       }
       .rightSide{
             background:grey;
             border:1px solid red;
             width:40%;
+            .todayAverage {
+            width: 100%;
+            border: 1px solid red;
+            margin: 0 auto;
+            background: yellow;
+            }
             .rightSideInfo{
                   display:none;
             }

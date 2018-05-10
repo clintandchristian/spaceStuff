@@ -134,13 +134,8 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 header {
   background: black;
-  height: 200px;
+  height: 300px;
   width: 100%; }
-  header .todayAverage {
-    width: 30%;
-    border: 1px solid red;
-    margin: 0 auto;
-    background: yellow; }
 
 .wrapper {
   width: 80%;
@@ -155,10 +150,21 @@ header {
   .wrapper .leftSide {
     background: lightblue;
     width: 60%; }
+    .wrapper .leftSide .asteroidList {
+      list-style: none; }
+      .wrapper .leftSide .asteroidList li {
+        padding: 10px 0;
+        border: 3px solid grey;
+        margin-bottom: 10px; }
   .wrapper .rightSide {
     background: grey;
     border: 1px solid red;
     width: 40%; }
+    .wrapper .rightSide .todayAverage {
+      width: 100%;
+      border: 1px solid red;
+      margin: 0 auto;
+      background: yellow; }
     .wrapper .rightSide .rightSideInfo {
       display: none; }
     .wrapper .rightSide .active {
