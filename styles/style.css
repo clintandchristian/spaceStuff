@@ -134,8 +134,9 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 header {
   background: black;
-  height: 300px;
-  width: 100%; }
+  height: 100vh;
+  width: 100%;
+  color: white; }
 
 .wrapper {
   width: 80%;
