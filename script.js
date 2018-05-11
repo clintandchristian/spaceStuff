@@ -91,7 +91,9 @@ app.displayInfo = function (asteroids) {
 
             $(".rightSide").append(`
                   <div class="${astName} rightSideInfo">
-                        <img src="${astImage}.svg" alt="a ${astImage} asteroid">
+                        <div class="sidebarImageContainer">
+                              <img src="${astImage}.svg" alt="a ${astImage} asteroid">
+                        </div>
                         <h2>${astName}</h2>
                         <p>Estimated Diameter: ${astSize} km</p>
                         <p>Miss Distance: ${astDistance} km</p>
