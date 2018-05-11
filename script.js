@@ -1,22 +1,22 @@
 const app = {};
 
 //date function
-const date = function() {
-  var today = new Date();
-  var dd = today.getDate();
-  var mm = today.getMonth() + 1; //January is 0!
-  var yyyy = today.getFullYear();
+const date = function () {
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth() + 1; //January is 0!
+      var yyyy = today.getFullYear();
 
-  if (dd < 10) {
-    dd = "0" + dd;
-  }
+      if (dd < 10) {
+            dd = "0" + dd;
+      }
 
-  if (mm < 10) {
-    mm = "0" + mm;
-  }
+      if (mm < 10) {
+            mm = "0" + mm;
+      }
 
-  today = yyyy + "-" + mm + "-" + dd;
-  return today;
+      today = yyyy + "-" + mm + "-" + dd;
+      return today;
 };
 
 
@@ -48,9 +48,9 @@ app.getInfo = function() {
 avgSize = []
 avgDist = []
 avgSpeed = []
-app.displayInfo = function(asteroids) {
+app.displayInfo = function (asteroids) {
       asteroids.forEach((arr) => {
-            
+
             const astName = arr.name.replace(/\s+/g, "").replace(/\(|\)/g, '');
             // console.log(astName);
             // str.replace(/\s+/g, "");
@@ -91,7 +91,9 @@ app.displayInfo = function(asteroids) {
 
             $(".rightSide").append(`
                   <div class="${astName} rightSideInfo">
-                        <img src="${astImage}.svg" alt="a ${astImage} asteroid">
+                        <div class="sidebarImageContainer">
+                              <img src="${astImage}.svg" alt="a ${astImage} asteroid">
+                        </div>
                         <h2>${astName}</h2>
                         <p>Estimated Diameter: ${astSize} km</p>
                         <p>Miss Distance: ${astDistance} km</p>
@@ -106,21 +108,21 @@ app.displayInfo = function(asteroids) {
       })
 
 
-      
-      avgSizeAdded = avgSize.reduce((prev,curr) => {
+
+      avgSizeAdded = avgSize.reduce((prev, curr) => {
             return prev + curr;
       });
       avgSizeTrue = Math.round((avgSizeAdded / avgSize.length) * 100) / 100
       $('.averageSize').append(`Average Size: ${avgSizeTrue} km`);
 
-      avgDistAdded = avgDist.reduce((prev,curr) => {
-          return prev + curr;
+      avgDistAdded = avgDist.reduce((prev, curr) => {
+            return prev + curr;
       });
       avgDistTrue = Math.round((avgDistAdded / avgDist.length) * 100) / 100
       $('.averageDistance').append(`Average Distance: ${avgDistTrue} km away from Earth`);
 
-      avgSpeedAdded = avgSpeed.reduce((prev,curr) => {
-        return prev + curr;
+      avgSpeedAdded = avgSpeed.reduce((prev, curr) => {
+            return prev + curr;
       })
       avgSpeedTrue = Math.round((avgSpeedAdded / avgSpeed.length) * 100) / 100
       $('.averageSpeed').append(`Average Speed: ${avgSpeedTrue} km/s`);
@@ -146,17 +148,14 @@ app.events = function() {
 
 
 
-app.init = function() {
-  app.getInfo();
-  app.events();
+app.init = function () {
+      app.getInfo();
+      app.events();
 };
 
 
 
 
-$(function() {
-  app.init();
+$(function () {
+      app.init();
 });
-
-//   get current date
-//   get info on all asteroids to pass by today
