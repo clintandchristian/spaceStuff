@@ -56,6 +56,24 @@ app.displayInfo = function(asteroids) {
             // str.replace(/\s+/g, "");
 
             const astSize = arr.estimated_diameter.kilometers.estimated_diameter_max;
+
+            let astImage;
+
+            if (astSize > 1) {
+              console.log('this astSize is huge!')
+              astImage = "large"
+            }
+            else if (astSize < 1 && astSize > 0.3) {
+              console.log('this astSize is medium')
+              astImage = "medium"
+            }
+            else {
+              console.log('this astSize is small')
+              astImage = "small"
+            }
+
+            
+            
             avgSize.push(astSize)
             
             const astDistance = arr.close_approach_data[0].miss_distance.kilometers
@@ -73,6 +91,7 @@ app.displayInfo = function(asteroids) {
 
             $(".rightSide").append(`
                   <div class="${astName} rightSideInfo">
+                        <img src="${astImage}.svg" alt="a ${astImage} asteroid">
                         <h2>${astName}</h2>
                         <p>Estimated Diameter: ${astSize} km</p>
                         <p>Miss Distance: ${astDistance} km</p>
@@ -116,6 +135,9 @@ app.events = function() {
     $(`.rightSideInfo`).removeClass("active")
     $(`div.${selectedAst}`).toggleClass("active");
     // $(`div.${selectedAst}`).toggleClass("")
+    if ($('div').hasClass("active")) {
+      $(".active").append()
+    }
 
     // app.individualInfo(selectedAst);
   })
