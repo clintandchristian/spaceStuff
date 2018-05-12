@@ -16,12 +16,8 @@ body {
 
 header{
       background-image:url(../space.svg);
-<<<<<<< HEAD
-      background-position:fill;
-=======
       background-size:100%;
       background-repeat:repeat-y;
->>>>>>> 688c0182dfff850d049f6260fdd67e6f5d5abc01
       height:100vh;
       width:100%;
       color: white;
@@ -43,7 +39,7 @@ header{
       
       }
       h2{
-            font-size:30px;
+            font-size:40px;
             color:orange;
             margin-top:40px;
             z-index:2;
@@ -109,19 +105,6 @@ main {
             border-bottom: 15px solid pink;
             line-height: 60px;
             margin: 0 0 50px 0;
-<<<<<<< HEAD
-      }
-      @keyframes smallAstOne {
-            0%{
-                  left:0;
-            }
-            100%{
-                  right:0;
-            }
-      }
-}
-
-=======
       }
 }
 @keyframes rotateRight {
@@ -139,7 +122,6 @@ main {
 }
 
 
->>>>>>> 688c0182dfff850d049f6260fdd67e6f5d5abc01
 .wrapper{
       width:80%;
       margin:0 auto;
@@ -190,28 +172,6 @@ main {
             }
       }
       .rightSide{
-<<<<<<< HEAD
-            background:grey;
-            // border:1px solid red;
-            width:50%;
-            display: flex;
-            flex-direction: column-reverse;
-            .todayAverage {
-                  width: 100%;
-                  border: 1px solid red;
-                  margin: 0 auto;
-                  background: yellow;
-                  }
-                  .rightSideInfo{
-                        display:none;
-                  }
-                  .active{
-                        display:block;
-                        background: black;
-                        color: white;
-                        
-                  }
-=======
             background:hsl(0, 0%, 50%);
             width:40%;
             display: flex;
@@ -235,7 +195,6 @@ main {
             img.medium{
                   width:200px;
             }
->>>>>>> 688c0182dfff850d049f6260fdd67e6f5d5abc01
       }
 }
 
