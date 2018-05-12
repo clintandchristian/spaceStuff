@@ -16,19 +16,23 @@ body {
 
 header{
       background-image:url(../space.svg);
-      background-position:cover;
+      background-size:100%;
+      background-repeat:repeat-y;
       height:100vh;
       width:100%;
       color: white;
       display:flex;
       flex-flow:column nowrap;
       align-items:center;
+      overflow:hidden;
       h1{
             font-size:100px;
-            color:orange;
+            color:rgb(204, 83, 41);
             text-transform:uppercase;
+            text-align:center;
+            line-height:150px;
             margin:0;
-            text-shadow:0px 10px red;
+            text-shadow:0px 10px rgb(167, 47, 50);
             margin-top:200px;
             z-index:2;
 
@@ -39,6 +43,7 @@ header{
             color:orange;
             margin-top:40px;
             z-index:2;
+            text-align:center;
       }
       .ast{
             position:absolute;
@@ -46,34 +51,39 @@ header{
       }
       .small{
             width:50px;
-            top:300px;
-            left:600px;
+            top:20%;
+            left:35%;
+            animation:rotateLeft 5s linear infinite;
       }
       .small2{
             width:50px;
-            top:700px;
-            left:1400px;
+            top:60%;
+            left:78%;
+            animation:rotateRight 5s linear infinite;
       }
       .small3{
             width:50px;
-            top:460px;
-            left:830px;
+            top:25%;
+            left:57%;
+            animation:rotateLeft 5s linear infinite;
       }
       .small4{
             width:50px;
-            top:900px;
-            left:300px;
-            animation:smallAstOne 5s linear infinite;
+            top:90%;
+            left:10%;
+            animation:rotateRight 5s linear infinite;
       }
       .medium{
             width:100px;
-            top:500px;
-            right:100px;
+            top:50%;
+            right:10%;
+            animation:rotateLeft 10s linear infinite;
       }
       .large{
             width:300px;
-            top:50px;
-            right:500px;
+            top:30%;
+            right:30%;
+            animation:rotateRight 40s linear infinite;
       }
 
       .earth{
@@ -83,9 +93,9 @@ header{
             left:50%;
             transform:translateX(-50%);
       }
+
 }
 
-<<<<<<< HEAD
 main {
       background: black;
       .selectHeader {
@@ -95,22 +105,23 @@ main {
             border-bottom: 15px solid pink;
             line-height: 60px;
             margin: 0 0 50px 0;
-=======
-@keyframes smallAstOne {
+      }
+}
+@keyframes rotateRight {
       0%{
-            left:0;
+            
       }
       100%{
-            right:0;
->>>>>>> 132e6ca3508af7b686702e75d43d62033bc50bba
+            transform:rotate(360deg)
+      }
+}
+@keyframes rotateLeft{
+      100%{
+            transform:rotate(-360deg)
       }
 }
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 132e6ca3508af7b686702e75d43d62033bc50bba
 .wrapper{
       width:80%;
       margin:0 auto;
@@ -146,30 +157,12 @@ main {
             }
       }
       .rightSide{
-            background:grey;
-            border:1px solid red;
+            background:hsl(0, 0%, 50%);
             width:40%;
             display: flex;
             flex-direction: column-reverse;
             .todayAverage {
-<<<<<<< HEAD
-                  width: 100%;
-                  border: 1px solid red;
-                  margin: 0 auto;
-                  background: yellow;
-                  }
-                  .rightSideInfo{
-                        display:none;
-                  }
-                  .active{
-                        display:block;
-                        background: black;
-                        color: white;
-                        
-                  }
-=======
             width: 100%;
-            border: 1px solid red;
             margin: 0 auto;
             background: yellow;
             }
@@ -181,7 +174,12 @@ main {
                   display:block;
                   background: black;
             }
->>>>>>> 132e6ca3508af7b686702e75d43d62033bc50bba
+            img.small{
+                  width:100px;
+            }
+            img.medium{
+                  width:200px;
+            }
       }
 }
 
