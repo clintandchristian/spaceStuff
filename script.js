@@ -136,6 +136,8 @@ app.events = function() {
       console.log(selectedAst);
     $(`.rightSideInfo`).removeClass("active")
     $(`div.${selectedAst}`).toggleClass("active");
+    $(".rightSide").css({"left": "50%", "transform":"translateX(-50%)"})
+    $(".container").css({"left":"-100%"})
     // $(`div.${selectedAst}`).toggleClass("")
 
     // app.individualInfo(selectedAst);

@@ -123,16 +123,19 @@ main {
 
 
 .wrapper{
-      width:80%;
-      margin:0 auto;
-      display:flex;
-      flex-flow:row nowrap;
-      .leftSide{
+      width:100%;
+      // position:absolute;
+
+      .container{
             // background: black;
             border: 20px solid rgb(92, 34, 71);
             border-radius: 100px;
             width:50%;
             padding: 10px;
+            position:absolute;
+            left:50%;
+            transform:translateX(-50%);
+            transition:all 1s ease-in-out;
 
             .firstInnerLeft {
                   border: 20px solid rgb(167, 47, 50);
@@ -142,6 +145,9 @@ main {
                   .secondInnerLeft {
                         border: 20px solid rgb(204, 83, 41);
                         border-radius: 50px;
+                        display:flex;
+                        flex-flow:column nowrap;
+                        justify-content:space-around;
                         
                         .asteroidList{
                               list-style: none;
@@ -152,30 +158,36 @@ main {
                                     width: 50%;
                                     line-height: 50px;
                                     color: rgb(68, 142, 222);
+                                    text-align:center;
                                     
                               }
-                              li:hover::before {
-                                    content: "▶";
-                                    border-color: transparent #111;
-                                    // border-color: white;
-                                    border-style: solid;
-                                    border-width: 0.35em 0 0.35em 0.45em;
-                                    display: block;
-                                    height: 0;
-                                    width: 0;
-                                    // left: -1em;
-                                    // top: 0.9em;
-                                    position: relative;
-                              }
+                              // li:hover::before {
+                              //       content: "▶";
+                              //       border-color: transparent #111;
+                              //       // border-color: white;
+                              //       border-style: solid;
+                              //       border-width: 0.35em 0 0.35em 0.45em;
+                              //       display: block;
+                              //       height: 0;
+                              //       width: 0;
+                              //       // left: -1em;
+                              //       // top: 0.9em;
+                              //       position: relative;
+                              // }
                         }
                   }
             }
       }
       .rightSide{
-            background:hsl(0, 0%, 50%);
-            width:40%;
             display: flex;
-            flex-direction: column-reverse;
+            flex-direction: column;
+            position:relative;
+            justify-content:space-between;
+            left:100%;
+            width:50%;
+            transition:all 1s ease-in-out;
+
+            
             .todayAverage {
             width: 100%;
             margin: 0 auto;
@@ -194,6 +206,9 @@ main {
             }
             img.medium{
                   width:200px;
+            }
+            img.large{
+                  width:250px;
             }
       }
 }
