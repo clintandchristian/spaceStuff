@@ -16,7 +16,7 @@ body {
 
 header{
       background-image:url(../space.svg);
-      background-position:cover;
+      background-position:fill;
       height:100vh;
       width:100%;
       color: white;
@@ -85,7 +85,6 @@ header{
       }
 }
 
-<<<<<<< HEAD
 main {
       background: black;
       .selectHeader {
@@ -95,22 +94,17 @@ main {
             border-bottom: 15px solid pink;
             line-height: 60px;
             margin: 0 0 50px 0;
-=======
-@keyframes smallAstOne {
-      0%{
-            left:0;
       }
-      100%{
-            right:0;
->>>>>>> 132e6ca3508af7b686702e75d43d62033bc50bba
+      @keyframes smallAstOne {
+            0%{
+                  left:0;
+            }
+            100%{
+                  right:0;
+            }
       }
 }
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 132e6ca3508af7b686702e75d43d62033bc50bba
 .wrapper{
       width:80%;
       margin:0 auto;
@@ -118,41 +112,55 @@ main {
       flex-flow:row nowrap;
       .leftSide{
             // background: black;
-            width:60%;
-            .asteroidList{
-                  list-style: none;
-                  li {
-                        // padding: 10px 0;
-                        // border: 3px solid grey;
-                        margin: 0 auto 10px auto;
-                        width: 70%;
-                        line-height: 30px;
-                        color: rgb(68, 142, 222);
+            border: 20px solid rgb(92, 34, 71);
+            border-radius: 100px;
+            width:50%;
+            padding: 10px;
+
+            .firstInnerLeft {
+                  border: 20px solid rgb(167, 47, 50);
+                  border-radius: 75px;
+                  padding: 10px;
+
+                  .secondInnerLeft {
+                        border: 20px solid rgb(204, 83, 41);
+                        border-radius: 50px;
                         
-                  }
-                  li:hover::before {
-                        content: "▶";
-                        border-color: transparent #111;
-                        // border-color: white;
-                        border-style: solid;
-                        border-width: 0.35em 0 0.35em 0.45em;
-                        display: block;
-                        height: 0;
-                        width: 0;
-                        // left: -1em;
-                        // top: 0.9em;
-                        position: relative;
+                        .asteroidList{
+                              list-style: none;
+                              li {
+                                    // padding: 10px 0;
+                                    // border: 3px solid grey;
+                                    margin: 0 auto 10px auto;
+                                    width: 50%;
+                                    line-height: 50px;
+                                    color: rgb(68, 142, 222);
+                                    
+                              }
+                              li:hover::before {
+                                    content: "▶";
+                                    border-color: transparent #111;
+                                    // border-color: white;
+                                    border-style: solid;
+                                    border-width: 0.35em 0 0.35em 0.45em;
+                                    display: block;
+                                    height: 0;
+                                    width: 0;
+                                    // left: -1em;
+                                    // top: 0.9em;
+                                    position: relative;
+                              }
+                        }
                   }
             }
       }
       .rightSide{
             background:grey;
-            border:1px solid red;
-            width:40%;
+            // border:1px solid red;
+            width:50%;
             display: flex;
             flex-direction: column-reverse;
             .todayAverage {
-<<<<<<< HEAD
                   width: 100%;
                   border: 1px solid red;
                   margin: 0 auto;
@@ -167,21 +175,6 @@ main {
                         color: white;
                         
                   }
-=======
-            width: 100%;
-            border: 1px solid red;
-            margin: 0 auto;
-            background: yellow;
-            }
-            .rightSideInfo{
-                  display:none;
-                  color:white;
-            }
-            .active{
-                  display:block;
-                  background: black;
-            }
->>>>>>> 132e6ca3508af7b686702e75d43d62033bc50bba
       }
 }
 
