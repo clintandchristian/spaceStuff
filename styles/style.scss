@@ -10,6 +10,10 @@ body{
 
 }
 
+body {
+      font-family: 'Press Start 2P', cursive;
+}
+
 header{
       background-image:url(../space.svg);
       background-position:cover;
@@ -81,31 +85,63 @@ header{
       }
 }
 
+<<<<<<< HEAD
+main {
+      background: black;
+      .selectHeader {
+            color: pink;
+            text-align: center;
+            border-top: 15px solid pink;
+            border-bottom: 15px solid pink;
+            line-height: 60px;
+            margin: 0 0 50px 0;
+=======
 @keyframes smallAstOne {
       0%{
             left:0;
       }
       100%{
             right:0;
+>>>>>>> 132e6ca3508af7b686702e75d43d62033bc50bba
       }
 }
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 132e6ca3508af7b686702e75d43d62033bc50bba
 .wrapper{
       width:80%;
       margin:0 auto;
       display:flex;
       flex-flow:row nowrap;
       .leftSide{
-            background:lightblue;
+            // background: black;
             width:60%;
             .asteroidList{
                   list-style: none;
                   li {
-                        padding: 10px 0;
-                        border: 3px solid grey;
-                        margin-bottom: 10px;
+                        // padding: 10px 0;
+                        // border: 3px solid grey;
+                        margin: 0 auto 10px auto;
+                        width: 70%;
+                        line-height: 30px;
+                        color: rgb(68, 142, 222);
+                        
+                  }
+                  li:hover::before {
+                        content: "▶";
+                        border-color: transparent #111;
+                        // border-color: white;
+                        border-style: solid;
+                        border-width: 0.35em 0 0.35em 0.45em;
+                        display: block;
+                        height: 0;
+                        width: 0;
+                        // left: -1em;
+                        // top: 0.9em;
+                        position: relative;
                   }
             }
       }
@@ -113,7 +149,25 @@ header{
             background:grey;
             border:1px solid red;
             width:40%;
+            display: flex;
+            flex-direction: column-reverse;
             .todayAverage {
+<<<<<<< HEAD
+                  width: 100%;
+                  border: 1px solid red;
+                  margin: 0 auto;
+                  background: yellow;
+                  }
+                  .rightSideInfo{
+                        display:none;
+                  }
+                  .active{
+                        display:block;
+                        background: black;
+                        color: white;
+                        
+                  }
+=======
             width: 100%;
             border: 1px solid red;
             margin: 0 auto;
@@ -127,6 +181,7 @@ header{
                   display:block;
                   background: black;
             }
+>>>>>>> 132e6ca3508af7b686702e75d43d62033bc50bba
       }
 }
 

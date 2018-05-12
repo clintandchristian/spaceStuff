@@ -46,9 +46,15 @@ app.getInfo = function() {
   });
 };
 app.displayInfo = function (asteroids) {
+<<<<<<< HEAD
+  avgSize = []
+  avgDist = []
+  avgSpeed = []
+=======
       avgSize = []
       avgDist = []
       avgSpeed = []
+>>>>>>> 132e6ca3508af7b686702e75d43d62033bc50bba
       asteroids.forEach((arr) => {
 
             const astName = arr.name.replace(/\s+/g, "").replace(/\(|\)/g, '');
@@ -92,7 +98,11 @@ app.displayInfo = function (asteroids) {
             $(".rightSide").append(`
                   <div class="${astName} rightSideInfo">
                         <div class="sidebarImageContainer">
+<<<<<<< HEAD
+                              <img src="${astImage}.svg" class="${astImage}"alt="a ${astImage} asteroid">
+=======
                               <img src="${astImage}.svg" class="${astImage}" alt="a ${astImage} asteroid">
+>>>>>>> 132e6ca3508af7b686702e75d43d62033bc50bba
                         </div>
                         <h2>${astName}</h2>
                         <p>Estimated Diameter: ${astSize} km</p>
@@ -137,9 +147,6 @@ app.events = function() {
     $(`.rightSideInfo`).removeClass("active")
     $(`div.${selectedAst}`).toggleClass("active");
     // $(`div.${selectedAst}`).toggleClass("")
-    if ($('div').hasClass("active")) {
-      $(".active").append()
-    }
 
     // app.individualInfo(selectedAst);
   })
