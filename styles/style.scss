@@ -16,12 +16,8 @@ body {
 
 header{
       background-image:url(../space.svg);
-<<<<<<< HEAD
-      background-position:fill;
-=======
       background-size:100%;
       background-repeat:repeat-y;
->>>>>>> 688c0182dfff850d049f6260fdd67e6f5d5abc01
       height:100vh;
       width:100%;
       color: white;
@@ -109,19 +105,6 @@ main {
             border-bottom: 15px solid pink;
             line-height: 60px;
             margin: 0 0 50px 0;
-<<<<<<< HEAD
-      }
-      @keyframes smallAstOne {
-            0%{
-                  left:0;
-            }
-            100%{
-                  right:0;
-            }
-      }
-}
-
-=======
       }
 }
 @keyframes rotateRight {
@@ -139,18 +122,20 @@ main {
 }
 
 
->>>>>>> 688c0182dfff850d049f6260fdd67e6f5d5abc01
 .wrapper{
-      width:80%;
-      margin:0 auto;
-      display:flex;
-      flex-flow:row nowrap;
-      .leftSide{
+      width:100%;
+      // position:absolute;
+
+      .container{
             // background: black;
             border: 20px solid rgb(92, 34, 71);
             border-radius: 100px;
             width:50%;
             padding: 10px;
+            position:absolute;
+            left:50%;
+            transform:translateX(-50%);
+            transition:all 1s ease-in-out;
 
             .firstInnerLeft {
                   border: 20px solid rgb(167, 47, 50);
@@ -160,6 +145,9 @@ main {
                   .secondInnerLeft {
                         border: 20px solid rgb(204, 83, 41);
                         border-radius: 50px;
+                        display:flex;
+                        flex-flow:column nowrap;
+                        justify-content:space-around;
                         
                         .asteroidList{
                               list-style: none;
@@ -170,52 +158,36 @@ main {
                                     width: 50%;
                                     line-height: 50px;
                                     color: rgb(68, 142, 222);
+                                    text-align:center;
                                     
                               }
-                              li:hover::before {
-                                    content: "▶";
-                                    border-color: transparent #111;
-                                    // border-color: white;
-                                    border-style: solid;
-                                    border-width: 0.35em 0 0.35em 0.45em;
-                                    display: block;
-                                    height: 0;
-                                    width: 0;
-                                    // left: -1em;
-                                    // top: 0.9em;
-                                    position: relative;
-                              }
+                              // li:hover::before {
+                              //       content: "▶";
+                              //       border-color: transparent #111;
+                              //       // border-color: white;
+                              //       border-style: solid;
+                              //       border-width: 0.35em 0 0.35em 0.45em;
+                              //       display: block;
+                              //       height: 0;
+                              //       width: 0;
+                              //       // left: -1em;
+                              //       // top: 0.9em;
+                              //       position: relative;
+                              // }
                         }
                   }
             }
       }
       .rightSide{
-<<<<<<< HEAD
-            background:grey;
-            // border:1px solid red;
+            display: flex;
+            flex-direction: column;
+            position:relative;
+            justify-content:space-between;
+            left:100%;
             width:50%;
-            display: flex;
-            flex-direction: column-reverse;
-            .todayAverage {
-                  width: 100%;
-                  border: 1px solid red;
-                  margin: 0 auto;
-                  background: yellow;
-                  }
-                  .rightSideInfo{
-                        display:none;
-                  }
-                  .active{
-                        display:block;
-                        background: black;
-                        color: white;
-                        
-                  }
-=======
-            background:hsl(0, 0%, 50%);
-            width:40%;
-            display: flex;
-            flex-direction: column-reverse;
+            transition:all 1s ease-in-out;
+
+            
             .todayAverage {
             width: 100%;
             margin: 0 auto;
@@ -235,7 +207,9 @@ main {
             img.medium{
                   width:200px;
             }
->>>>>>> 688c0182dfff850d049f6260fdd67e6f5d5abc01
+            img.large{
+                  width:250px;
+            }
       }
 }
 
