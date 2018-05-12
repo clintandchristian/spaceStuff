@@ -46,35 +46,41 @@ app.getInfo = function() {
   });
 };
 app.displayInfo = function (asteroids) {
+<<<<<<< HEAD
   avgSize = []
   avgDist = []
   avgSpeed = []
+=======
+      avgSize = []
+      avgDist = []
+      avgSpeed = []
+>>>>>>> 132e6ca3508af7b686702e75d43d62033bc50bba
       asteroids.forEach((arr) => {
 
             const astName = arr.name.replace(/\s+/g, "").replace(/\(|\)/g, '');
             // console.log(astName);
             // str.replace(/\s+/g, "");
 
-            const astSize = arr.estimated_diameter.kilometers.estimated_diameter_max;
-
+            
             let astImage;
-
+            const astSize = arr.estimated_diameter.kilometers.estimated_diameter_max;
+            avgSize.push(astSize)
+            
             if (astSize > 1) {
-              console.log('this astSize is huge!')
-              astImage = "large"
+                  console.log('this astSize is huge!')
+                  astImage = "large"
             }
             else if (astSize < 1 && astSize > 0.3) {
-              console.log('this astSize is medium')
-              astImage = "medium"
+                  console.log('this astSize is medium')
+                  astImage = "medium"
             }
             else {
-              console.log('this astSize is small')
-              astImage = "small"
+                  console.log('this astSize is small')
+                  astImage = "small"
             }
-
             
             
-            avgSize.push(astSize)
+            
             
             const astDistance = arr.close_approach_data[0].miss_distance.kilometers
             const astDisToNumber = parseInt(astDistance);
@@ -92,7 +98,11 @@ app.displayInfo = function (asteroids) {
             $(".rightSide").append(`
                   <div class="${astName} rightSideInfo">
                         <div class="sidebarImageContainer">
+<<<<<<< HEAD
                               <img src="${astImage}.svg" class="${astImage}"alt="a ${astImage} asteroid">
+=======
+                              <img src="${astImage}.svg" class="${astImage}" alt="a ${astImage} asteroid">
+>>>>>>> 132e6ca3508af7b686702e75d43d62033bc50bba
                         </div>
                         <h2>${astName}</h2>
                         <p>Estimated Diameter: ${astSize} km</p>
