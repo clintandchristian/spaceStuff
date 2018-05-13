@@ -89,7 +89,7 @@ app.displayInfo = function (asteroids) {
             const astHazardous = arr.is_potentially_hazardous_asteroid
             // console.log(astHazardous)
 
-            $(".rightSide").append(`
+            $(".secondInnerRight").append(`
                   <div class="${astName} rightSideInfo">
                         <div class="sidebarImageContainer">
                               <img src="${astImage}.svg" class="${astImage}" alt="a ${astImage} asteroid">
@@ -136,8 +136,8 @@ app.events = function() {
       console.log(selectedAst);
     $(`.rightSideInfo`).removeClass("active")
     $(`div.${selectedAst}`).toggleClass("active");
-    $(".rightSide").css({"left": "50%", "transform":"translateX(-50%)"})
-    $(".container").css({"left":"-100%"})
+    $(".rightWrapper").css({"left": "0", "right": "0"})
+    $(".leftWrapper").css({"left":"-100%", "right":"100%"})
     // $(`div.${selectedAst}`).toggleClass("")
 
     // app.individualInfo(selectedAst);
