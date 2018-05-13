@@ -113,38 +113,40 @@ app.displayInfo = function (asteroids) {
       avgSizeAdded = avgSize.reduce((prev, curr) => {
             return prev + curr;
       });
-      avgSizeTrue = Math.round((avgSizeAdded / avgSize.length) * 100) / 100
-      $('.averageSize').append(`Average Diameter: ${avgSizeTrue} km`);
+      avgSizeTrue = Math.round((avgSizeAdded / avgSize.length) * 100) / 100;
+      $('.averageSize').append(`Diameter: ${avgSizeTrue} km`);
 
       avgDistAdded = avgDist.reduce((prev, curr) => {
             return prev + curr;
       });
-      avgDistTrue = Math.round((avgDistAdded / avgDist.length) * 100) / 100
-      $('.averageDistance').append(`Average Miss Distance: ${avgDistTrue} km away from Earth`);
+      // avgDistTrue = Math.round((avgDistAdded / avgDist.length) * 100) / 100;
+      avgDistTrue = (avgDistAdded / avgDist.length).toFixed(2)
+      $('.averageDistance').append(`Miss Distance: ${avgDistTrue} km`);
 
       avgSpeedAdded = avgSpeed.reduce((prev, curr) => {
             return prev + curr;
       })
-      avgSpeedTrue = Math.round((avgSpeedAdded / avgSpeed.length) * 100) / 100
-      $('.averageSpeed').append(`Average Speed: ${avgSpeedTrue} km/s`);
+      avgSpeedTrue = Math.round((avgSpeedAdded / avgSpeed.length) * 100) / 100;
+      $('.averageSpeed').append(`Speed: ${avgSpeedTrue} km/s`);
 }
 
 // This function listens to click on unordered list and 
 app.events = function() {
-  $('ul').on('click', 'li', function() {
-    // console.log(e.currentTarget);
-    const selectedAst = $(this).text().replace(/\s+/g, "").replace(/\(|\)/g, '');
-      console.log(selectedAst);
-    $(`.rightSideInfo`).removeClass("active")
-    $(".leftWrapper").hide()
-    $(`div.${selectedAst}`).toggleClass("active");
-    $(".rightWrapper").fadeOut()
-    $(".rightWrapper").fadeIn(100)
-
-    // $(`div.${selectedAst}`).toggleClass("")
-
-    // app.individualInfo(selectedAst);
-  })
+      $('ul').on('click', 'li', function() {
+      // console.log(e.currentTarget);
+            const selectedAst = $(this).text().replace(/\s+/g, "").replace(/\(|\)/g, '');
+            console.log(selectedAst);
+            $(".leftWrapper").hide();
+            $(`div.${selectedAst}`).toggleClass("active");
+            $(".rightWrapper").fadeIn(100);
+      });
+      $(".secondInnerRight").on("click", ".selectAnother", function(e) {
+            console.log("hello")
+            e.preventDefault()
+            $(".rightWrapper").hide();
+            $(`div.rightSideInfo`).removeClass("active");
+            $(".leftWrapper").fadeIn(100);
+      })
 }
 
 

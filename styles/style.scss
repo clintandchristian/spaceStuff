@@ -110,9 +110,10 @@ header{
 }
 
 main {
-      background: black;
+      background-image: url(../space.svg);
+      background-size:100%;
+      background-repeat:repeat-y;
       width:100%;
-      height:100vh;
       overflow-x:hidden;
       position:relative;
 
@@ -138,7 +139,7 @@ main {
             width:100%;
             // position:absolute;
             transition:all 0.5s linear;
-            position:absolute;
+            position:relative;
             top:9%;
             display:flex;
             flex-flow:row nowrap;
@@ -150,6 +151,8 @@ main {
             border-radius: 100px;
             width:60%;
             padding: 10px;
+            margin:40px 0;
+            background:black;
 
             .firstInnerLeft {
                   border: 20px solid rgb(167, 47, 50);
@@ -167,11 +170,14 @@ main {
                                     // border: 3px solid grey;
                                     margin: 0 auto 10px auto;
                                     width: 50%;
-                                    line-height: 50px;
+                                    line-height: 70px;
                                     color: rgb(68, 142, 222);
                                     text-align:center;
                                     display:block;
                                     
+                              }
+                              li:hover{
+                                    color:white;
                               }
                               li:hover::before {
                                     content: "▶";
@@ -193,7 +199,8 @@ main {
       .rightWrapper{
             width:100%;
             display:none;
-            position:absolute;
+            position:relative;
+            padding:40px 0;
             top:9%;
             transition:all 0.5s linear;
             
@@ -203,6 +210,7 @@ main {
             border: 20px solid rgb(92, 34, 71);
             border-radius: 100px;
             padding:10px;
+            background:black;
             margin:0 auto;
 
 
@@ -239,6 +247,7 @@ main {
                   .rightSideInfo{
                         display:none;
                         color:white;
+                        
                         h2{
                               text-align:center;
                               font-size:40px;
@@ -275,7 +284,9 @@ main {
 
                   }
                   .active{
-                        display:block;
+                        display:flex;
+                        flex-flow:column nowrap;
+                        align-items:center;
                         background: black;
                   }
                   img.small{
@@ -291,5 +302,16 @@ main {
 
             
       }
+
+
+footer{
+      background:black;
+      h4{
+            margin:0;
+            color:white;
+            padding:60px;
+            text-align:center;
+      }
+}
 
 
