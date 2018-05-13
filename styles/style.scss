@@ -39,7 +39,7 @@ header{
       
       }
       h2{
-            font-size:30px;
+            font-size:40px;
             color:orange;
             margin-top:40px;
             z-index:2;
@@ -115,16 +115,17 @@ main {
       height:100vh;
       overflow-x:hidden;
       position:relative;
+
       // display:flex;
       // justify-content:space-around;
       // display:flex;
       // flex-flow:row nowrap;
 }
 .selectHeader {
-      color: pink;
+      color: #DE457F;
       text-align: center;
-      border-top: 25px solid pink;
-      border-bottom: 25px solid pink;
+      border-top: 25px solid #DE457F;
+      border-bottom: 25px solid #DE457F;
       font-size:40px;
       padding:50px;
       margin:0;
@@ -138,7 +139,7 @@ main {
             // position:absolute;
             transition:all 0.5s linear;
             position:absolute;
-            top:0;
+            top:9%;
             display:flex;
             flex-flow:row nowrap;
             justify-content:space-around;
@@ -158,9 +159,6 @@ main {
                   .secondInnerLeft {
                         border: 20px solid rgb(204, 83, 41);
                         border-radius: 50px;
-                        display:flex;
-                        flex-flow:column nowrap;
-                        justify-content:space-around;
                         
                         .asteroidList{
                               list-style: none;
@@ -175,19 +173,19 @@ main {
                                     display:block;
                                     
                               }
-                              // li:hover::before {
-                              //       content: "▶";
-                              //       border-color: transparent #111;
-                              //       // border-color: white;
-                              //       border-style: solid;
-                              //       border-width: 0.35em 0 0.35em 0.45em;
-                              //       display: block;
-                              //       height: 0;
-                              //       width: 0;
-                              //       // left: -1em;
-                              //       // top: 0.9em;
-                              //       position: relative;
-                              // }
+                              li:hover::before {
+                                    content: "▶";
+                                    border-color: transparent #111;
+                                    // border-color: white;
+                                    border-style: solid;
+                                    border-width: 0.35em 0 0.35em 0.45em;
+                                    display: block;
+                                    height: 0;
+                                    width: 0;
+                                    // left: -1em;
+                                    // top: 0.9em;
+                                    position: relative;
+                              }
                         }
                   }
             }
@@ -196,7 +194,7 @@ main {
             width:100%;
             display:none;
             position:absolute;
-            top:0;
+            top:9%;
             transition:all 0.5s linear;
             
       }
@@ -256,11 +254,23 @@ main {
                         }
                         img{
                               // position:relative;
-                              display:block;
+                              // display:block;
                               animation:rotateRight 40s linear infinite;
                         }
                         p{
                               font-size:25px;
+                        }
+                        .selectAnother {
+                              text-decoration: none;
+                              color: #308891;
+                              font-size: 25px;
+                              padding: 20px;
+                              line-height:70px;
+                        }
+                        .selectAnother:hover {
+                              background-color:#308891;
+                              color: black; 
+                              box-shadow: 10px 10px 3px #0f6a75;
                         }
 
                   }

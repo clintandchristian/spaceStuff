@@ -29,8 +29,8 @@ app.getInfo = function() {
     method: "GET",
     data: {
       api_key: "o9VA2EVoF5h978FUEN79Xxi69MSw6jwsUZOFR1VD",
-      start_date: x,
-      end_date: x
+      start_date: "2018-05-11",
+      end_date: "2018-05-11"
     }
   }).then(res => {
     // console.log(res);
@@ -99,6 +99,7 @@ app.displayInfo = function (asteroids) {
                         <p>Miss Distance: ${astDistance} km</p>
                         <p>Speed: ${astSpeed} km/s</p>
                         <p>Potentially Hazardous: ${astHazardous}</p>
+                        <a class="selectAnother"href="#">Select Another Asteroid</a>
                   </div>`
             )
             // console.log(astName)
