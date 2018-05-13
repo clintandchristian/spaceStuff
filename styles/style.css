@@ -407,7 +407,8 @@ main {
         -webkit-animation-iteration-count: infinite;
         animation-iteration-count: infinite;
         -webkit-animation-duration: 1s;
-        animation-duration: 1s; }
+        animation-duration: 1s;
+        padding: 30px; }
       .rightSide .secondInnerRight .rightSideInfo .selectAnother {
         text-decoration: none;
         color: #308891;
@@ -437,6 +438,37 @@ main {
       width: 200px; }
     .rightSide .secondInnerRight img.large {
       width: 250px; }
+
+@-webkit-keyframes speed {
+  from {
+    background-color: black;
+    color: white; }
+  to {
+    background-color: white;
+    color: black; } }
+
+@keyframes speed {
+  from {
+    background-color: black;
+    color: white; }
+  to {
+    background-color: white;
+    color: black; } }
+
+.averageSpeed {
+  margin: 0 auto;
+  width: 50%;
+  -webkit-animation-name: speed;
+  animation-name: speed;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  padding: 20px; }
+
+.speedAnimation {
+  -webkit-animation-name: speed;
+  animation-name: speed;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite; }
 
 footer {
   background: black; }

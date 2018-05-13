@@ -22,28 +22,28 @@ const date = function () {
 
 const x = date();
 
-app.getInfo = function() {
-  $.ajax({
-    url: "https://api.nasa.gov/neo/rest/v1/feed?",
-    dataType: "json",
-    method: "GET",
-    data: {
-      api_key: "o9VA2EVoF5h978FUEN79Xxi69MSw6jwsUZOFR1VD",
-      start_date: "2018-05-13",
-      end_date: "2018-05-13"
-    }
-  }).then(res => {
-    // console.log(res);
-        Object.keys(res.near_earth_objects).forEach(key => {
-          const arrayOfAsteroids = res.near_earth_objects[key];
-          console.log(arrayOfAsteroids);
-          app.displayInfo(arrayOfAsteroids)
-      //     for(x in arrayOfAsteroids){
-      //           console.log(is_potentially_hazardous_asteroid)
-      //     }
+app.getInfo = function () {
+      $.ajax({
+            url: "https://api.nasa.gov/neo/rest/v1/feed?",
+            dataType: "json",
+            method: "GET",
+            data: {
+                  api_key: "o9VA2EVoF5h978FUEN79Xxi69MSw6jwsUZOFR1VD",
+                  start_date: "2018-05-13",
+                  end_date: "2018-05-13"
+            }
+      }).then(res => {
+            // console.log(res);
+            Object.keys(res.near_earth_objects).forEach(key => {
+                  const arrayOfAsteroids = res.near_earth_objects[key];
+                  console.log(arrayOfAsteroids);
+                  app.displayInfo(arrayOfAsteroids)
+                  //     for(x in arrayOfAsteroids){
+                  //           console.log(is_potentially_hazardous_asteroid)
+                  //     }
 
-        })
-  });
+            })
+      });
 };
 app.displayInfo = function (asteroids) {
       avgSize = []
@@ -55,11 +55,11 @@ app.displayInfo = function (asteroids) {
             // console.log(astName);
             // str.replace(/\s+/g, "");
 
-            
+
             let astImage;
             const astSize = arr.estimated_diameter.kilometers.estimated_diameter_max;
             avgSize.push(astSize)
-            
+
             if (astSize > 1) {
                   console.log('this astSize is huge!')
                   astImage = "large"
@@ -72,10 +72,10 @@ app.displayInfo = function (asteroids) {
                   console.log('this astSize is small')
                   astImage = "small"
             }
-            
-            
-            
-            
+
+
+
+
             const astDistance = arr.close_approach_data[0].miss_distance.kilometers
             const astDisToNumber = parseInt(astDistance);
             avgDist.push(astDisToNumber)
@@ -86,17 +86,23 @@ app.displayInfo = function (asteroids) {
             avgSpeed.push(astSpeedToNumber)
             // console.log(astSpeed)
 
+            astSpeedAnimation = ((2 - (astSpeedToNumber * 0.1)) * 2)
+            console.log(astSpeedAnimation);
+
             const astHazardous = arr.is_potentially_hazardous_asteroid
             // console.log(astHazardous)
 
             let hazardous;
-            
+
             if (astHazardous === true) {
                   hazardous = "hazardousTrue"
             }
             else {
 
             }
+
+
+            
 
             $(".secondInnerRight").append(`
                   <div class="${astName} rightSideInfo">
@@ -106,7 +112,7 @@ app.displayInfo = function (asteroids) {
                         <h2>${astName}</h2>
                         <p>Estimated Diameter: ${astSize} km</p>
                         <p>Miss Distance: ${astDistance} km</p>
-                        <p>Speed: ${astSpeed} km/s</p>
+                        <p class="speedAnimation" style="animation-duration: ${astSpeedAnimation}s;">Speed: ${astSpeed} km/s</p>
                         <p class=${hazardous}>Potentially Hazardous: ${astHazardous}</p>
                         <a class="selectAnother"href="#">Select Another Asteroid</a>
                   </div>`
@@ -139,20 +145,25 @@ app.displayInfo = function (asteroids) {
             return prev + curr;
       })
       avgSpeedTrue = Math.round((avgSpeedAdded / avgSpeed.length) * 100) / 100;
+
+      avgSpeedAnimation = ((2 - (avgSpeedTrue * 0.1)) * 2)
+      console.log(avgSpeedAnimation);
       $('.averageSpeed').append(`Speed: ${avgSpeedTrue} km/s`);
+      $('.averageSpeed').css("animation-duration", `${avgSpeedAnimation}s`)
+
 }
 
 // This function listens to click on unordered list and 
-app.events = function() {
-      $('ul').on('click', 'li', function() {
-      // console.log(e.currentTarget);
+app.events = function () {
+      $('ul').on('click', 'li', function () {
+            // console.log(e.currentTarget);
             const selectedAst = $(this).text().replace(/\s+/g, "").replace(/\(|\)/g, '');
             console.log(selectedAst);
             $(".leftWrapper").hide();
             $(`div.${selectedAst}`).toggleClass("active");
             $(".rightWrapper").fadeIn(100);
       });
-      $(".secondInnerRight").on("click", ".selectAnother", function(e) {
+      $(".secondInnerRight").on("click", ".selectAnother", function (e) {
             console.log("hello")
             e.preventDefault()
             $(".rightWrapper").hide();
