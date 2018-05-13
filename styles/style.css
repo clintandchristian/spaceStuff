@@ -374,11 +374,21 @@ main {
         -ms-flex-align: center;
         align-items: center; }
       .rightSide .secondInnerRight .rightSideInfo img {
-        display: block;
         -webkit-animation: rotateRight 40s linear infinite;
         animation: rotateRight 40s linear infinite; }
       .rightSide .secondInnerRight .rightSideInfo p {
         font-size: 25px; }
+      .rightSide .secondInnerRight .rightSideInfo .selectAnother {
+        text-decoration: none;
+        color: #308891;
+        font-size: 25px;
+        padding: 20px;
+        line-height: 70px; }
+      .rightSide .secondInnerRight .rightSideInfo .selectAnother:hover {
+        background-color: #308891;
+        color: black;
+        -webkit-box-shadow: 10px 10px 3px #0f6a75;
+        box-shadow: 10px 10px 3px #0f6a75; }
     .rightSide .secondInnerRight .active {
       display: block;
       background: black; }

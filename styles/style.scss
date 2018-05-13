@@ -254,11 +254,23 @@ main {
                         }
                         img{
                               // position:relative;
-                              display:block;
+                              // display:block;
                               animation:rotateRight 40s linear infinite;
                         }
                         p{
                               font-size:25px;
+                        }
+                        .selectAnother {
+                              text-decoration: none;
+                              color: #308891;
+                              font-size: 25px;
+                              padding: 20px;
+                              line-height:70px;
+                        }
+                        .selectAnother:hover {
+                              background-color:#308891;
+                              color: black; 
+                              box-shadow: 10px 10px 3px #0f6a75;
                         }
 
                   }
