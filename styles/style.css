@@ -244,28 +244,28 @@ header {
 
 main {
   background: black;
-  position: relative;
   width: 100%;
-  height: 100%;
-  overflow-x: hidden; }
-  main .selectHeader {
-    color: pink;
-    text-align: center;
-    border-top: 15px solid pink;
-    border-bottom: 15px solid pink;
-    font-size: 40px;
-    margin: 0 0 50px 0;
-    padding: 30px; }
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative; }
+
+.selectHeader {
+  color: #DE457F;
+  text-align: center;
+  border-top: 25px solid #DE457F;
+  border-bottom: 25px solid #DE457F;
+  font-size: 40px;
+  padding: 50px;
+  margin: 0;
+  background: black; }
 
 .leftWrapper {
   width: 100%;
-  height: 100%;
-  position: relative;
-  left: 0;
-  right: 0;
   -webkit-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
   transition: all 0.5s linear;
+  position: absolute;
+  top: 9%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -309,28 +309,19 @@ main {
 
 .rightWrapper {
   width: 100%;
-  position: relative;
-  top: -20%;
-  left: 100%;
-  right: -100%;
+  display: none;
+  position: absolute;
+  top: 9%;
   -webkit-transition: all 0.5s linear;
   -o-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -ms-flex-pack: distribute;
-  justify-content: space-around; }
+  transition: all 0.5s linear; }
 
 .rightSide {
   width: 60%;
   border: 20px solid #5c2247;
   border-radius: 100px;
-  padding: 10px; }
+  padding: 10px;
+  margin: 0 auto; }
   .rightSide .firstInnerRight {
     border: 20px solid #a72f32;
     border-radius: 75px;
@@ -355,19 +346,37 @@ main {
     align-items: center; }
     .rightSide .secondInnerRight .todayAverage {
       width: 100%;
-      color: white; }
+      color: white;
+      text-align: center;
+      margin: 0 auto; }
+      .rightSide .secondInnerRight .todayAverage h3 {
+        font-size: 30px;
+        text-decoration: underline; }
+      .rightSide .secondInnerRight .todayAverage p {
+        font-size: 20px; }
     .rightSide .secondInnerRight .rightSideInfo {
       display: none;
       color: white; }
       .rightSide .secondInnerRight .rightSideInfo h2 {
-        text-align: center; }
+        text-align: center;
+        font-size: 40px;
+        text-decoration: underline; }
+      .rightSide .secondInnerRight .rightSideInfo .sidebarImageContainer {
+        height: 500px;
+        width: 500px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
       .rightSide .secondInnerRight .rightSideInfo img {
-        position: relative;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
-        margin: 100px 0; }
+        display: block;
+        -webkit-animation: rotateRight 40s linear infinite;
+        animation: rotateRight 40s linear infinite; }
       .rightSide .secondInnerRight .rightSideInfo p {
         font-size: 25px; }
     .rightSide .secondInnerRight .active {
