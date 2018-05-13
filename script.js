@@ -113,13 +113,13 @@ app.displayInfo = function (asteroids) {
             return prev + curr;
       });
       avgSizeTrue = Math.round((avgSizeAdded / avgSize.length) * 100) / 100
-      $('.averageSize').append(`Average Size: ${avgSizeTrue} km`);
+      $('.averageSize').append(`Average Diameter: ${avgSizeTrue} km`);
 
       avgDistAdded = avgDist.reduce((prev, curr) => {
             return prev + curr;
       });
       avgDistTrue = Math.round((avgDistAdded / avgDist.length) * 100) / 100
-      $('.averageDistance').append(`Average Distance: ${avgDistTrue} km away from Earth`);
+      $('.averageDistance').append(`Average Miss Distance: ${avgDistTrue} km away from Earth`);
 
       avgSpeedAdded = avgSpeed.reduce((prev, curr) => {
             return prev + curr;
@@ -135,9 +135,11 @@ app.events = function() {
     const selectedAst = $(this).text().replace(/\s+/g, "").replace(/\(|\)/g, '');
       console.log(selectedAst);
     $(`.rightSideInfo`).removeClass("active")
+    $(".leftWrapper").hide()
     $(`div.${selectedAst}`).toggleClass("active");
-    $(".rightWrapper").css({"left": "0", "right": "0"})
-    $(".leftWrapper").css({"left":"-100%", "right":"100%"})
+    $(".rightWrapper").fadeOut()
+    $(".rightWrapper").fadeIn(100)
+
     // $(`div.${selectedAst}`).toggleClass("")
 
     // app.individualInfo(selectedAst);
