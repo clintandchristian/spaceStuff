@@ -260,6 +260,17 @@ main {
                         p{
                               font-size:25px;
                         }
+                        @keyframes caution {
+                              from {background-color: yellow;
+                                    color: black;}
+                              to {background-color: black;
+                                    color: yellow;}
+                        }
+                        .hazardousTrue {
+                              animation-name: caution;
+                              animation-iteration-count: infinite;
+                              animation-duration: 1s;
+                        }
                         .selectAnother {
                               text-decoration: none;
                               color: #308891;

@@ -29,8 +29,8 @@ app.getInfo = function() {
     method: "GET",
     data: {
       api_key: "o9VA2EVoF5h978FUEN79Xxi69MSw6jwsUZOFR1VD",
-      start_date: "2018-05-11",
-      end_date: "2018-05-11"
+      start_date: "2018-05-13",
+      end_date: "2018-05-13"
     }
   }).then(res => {
     // console.log(res);
@@ -89,6 +89,15 @@ app.displayInfo = function (asteroids) {
             const astHazardous = arr.is_potentially_hazardous_asteroid
             // console.log(astHazardous)
 
+            let hazardous;
+            
+            if (astHazardous === true) {
+                  hazardous = "hazardousTrue"
+            }
+            else {
+
+            }
+
             $(".secondInnerRight").append(`
                   <div class="${astName} rightSideInfo">
                         <div class="sidebarImageContainer">
@@ -98,7 +107,7 @@ app.displayInfo = function (asteroids) {
                         <p>Estimated Diameter: ${astSize} km</p>
                         <p>Miss Distance: ${astDistance} km</p>
                         <p>Speed: ${astSpeed} km/s</p>
-                        <p>Potentially Hazardous: ${astHazardous}</p>
+                        <p class=${hazardous}>Potentially Hazardous: ${astHazardous}</p>
                         <a class="selectAnother"href="#">Select Another Asteroid</a>
                   </div>`
             )
@@ -107,6 +116,26 @@ app.displayInfo = function (asteroids) {
             const infoOfIndiv = `<li>${astName}</li>`
             $('.asteroidList').append(infoOfIndiv);
       })
+
+      // asteroids.filter((arr) => {
+      //       const astHazardousTrue = arr.is_potentially_hazardous_asteroid
+      //       console.log(astHazardousTrue);
+      //       if (astHazardousTrue === true) {
+      //             $('.hazardous').addClass('hazardousTrue');
+      //       } 
+      //       else {
+      //             $('.hazardous').removeClass('hazardousTrue');
+      //       }
+      // })
+      // console.log(asteroids.is_potentially_hazardous_asteroid);
+      // if (asteroids.is_potentially_hazardous_asteroid === true) {
+      //       $('.hazardous').addClass('hazardousTrue');
+      // }
+      // else {
+      //       $('.hazardous').removeClass('hazardousTrue');
+      // }
+
+
 
 
 
@@ -144,6 +173,10 @@ app.events = function() {
     // $(`div.${selectedAst}`).toggleClass("")
 
     // app.individualInfo(selectedAst);
+  })
+  $('.selectAnother').on('click', function() {
+        $('.rightWrapper').fadeIn()
+        $('.leftWrapper').fadeIn(100)
   })
 }
 

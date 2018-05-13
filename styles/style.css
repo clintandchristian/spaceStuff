@@ -378,6 +378,29 @@ main {
         animation: rotateRight 40s linear infinite; }
       .rightSide .secondInnerRight .rightSideInfo p {
         font-size: 25px; }
+
+@-webkit-keyframes caution {
+  from {
+    background-color: yellow;
+    color: black; }
+  to {
+    background-color: black;
+    color: yellow; } }
+
+@keyframes caution {
+  from {
+    background-color: yellow;
+    color: black; }
+  to {
+    background-color: black;
+    color: yellow; } }
+      .rightSide .secondInnerRight .rightSideInfo .hazardousTrue {
+        -webkit-animation-name: caution;
+        animation-name: caution;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s; }
       .rightSide .secondInnerRight .rightSideInfo .selectAnother {
         text-decoration: none;
         color: #308891;
