@@ -1,6 +1,7 @@
 const app = {};
 
 //date function
+
 const date = function () {
       var today = new Date();
       var dd = today.getDate();
@@ -29,22 +30,22 @@ app.getInfo = function () {
             method: "GET",
             data: {
                   api_key: "o9VA2EVoF5h978FUEN79Xxi69MSw6jwsUZOFR1VD",
-                  start_date: "2018-05-13",
-                  end_date: "2018-05-13"
+                  start_date: "2018-05-16",
+                  end_date: "2018-05-16"
+                  // usually start and end date recieve the variable "date"
+                  // for presentation purposes the date has been set to May 16th.
+            
             }
       }).then(res => {
-            // console.log(res);
             Object.keys(res.near_earth_objects).forEach(key => {
                   const arrayOfAsteroids = res.near_earth_objects[key];
                   console.log(arrayOfAsteroids);
                   app.displayInfo(arrayOfAsteroids)
-                  //     for(x in arrayOfAsteroids){
-                  //           console.log(is_potentially_hazardous_asteroid)
-                  //     }
-
             })
       });
 };
+
+
 app.displayInfo = function (asteroids) {
       avgSize = []
       avgDist = []
@@ -52,9 +53,6 @@ app.displayInfo = function (asteroids) {
       asteroids.forEach((arr) => {
 
             const astName = arr.name.replace(/\s+/g, "").replace(/\(|\)/g, '');
-            // console.log(astName);
-            // str.replace(/\s+/g, "");
-
 
             let astImage;
             const astSize = arr.estimated_diameter.kilometers.estimated_diameter_max;
@@ -79,29 +77,27 @@ app.displayInfo = function (asteroids) {
             const astDistance = arr.close_approach_data[0].miss_distance.kilometers
             const astDisToNumber = parseInt(astDistance);
             avgDist.push(astDisToNumber)
-            // console.log(astDistance)
 
             const astSpeed = arr.close_approach_data[0].relative_velocity.kilometers_per_second
             const astSpeedToNumber = parseInt(astSpeed);
             avgSpeed.push(astSpeedToNumber)
-            // console.log(astSpeed)
 
             astSpeedAnimation = ((2 - (astSpeedToNumber * 0.1)) * 4)
             console.log(astSpeedAnimation);
+            // this is for a CSS animation
+
 
             const astHazardous = arr.is_potentially_hazardous_asteroid
-            // console.log(astHazardous)
 
             let hazardous;
 
             if (astHazardous === true) {
                   hazardous = "hazardousTrue"
             }
-            else {
-
-            }
 
 
+
+            // this section populates the HTML with information
             
 
             $(".secondInnerRight").append(`
@@ -117,7 +113,6 @@ app.displayInfo = function (asteroids) {
                         <a class="selectAnother"href="#">Select Another Asteroid</a>
                   </div>`
             )
-            // console.log(astName)
 
             const infoOfIndiv = `<li>${astName}</li>`
             $('.asteroidList').append(infoOfIndiv);
@@ -137,7 +132,6 @@ app.displayInfo = function (asteroids) {
       avgDistAdded = avgDist.reduce((prev, curr) => {
             return prev + curr;
       });
-      // avgDistTrue = Math.round((avgDistAdded / avgDist.length) * 100) / 100;
       avgDistTrue = (avgDistAdded / avgDist.length).toFixed(2)
       $('.averageDistance').append(`Miss Distance: ${avgDistTrue} km`);
 
@@ -153,7 +147,7 @@ app.displayInfo = function (asteroids) {
 
 }
 
-// This function listens to click on unordered list and 
+// This function listens to click on unordered list and  appends text to the information div
 app.events = function () {
       $('ul').on('click', 'li', function () {
             // console.log(e.currentTarget);
