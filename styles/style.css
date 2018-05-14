@@ -188,7 +188,7 @@ header {
     z-index: 2;
     text-align: center; }
   header h3 {
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     color: yellow; }
   header .ast {
@@ -541,6 +541,10 @@ footer {
     padding: 60px;
     text-align: center;
     line-height: 18px; }
+
+.twitterBtn {
+  text-align: center;
+  padding-bottom: 30px; }
 
 @media (max-width: 1293px) {
   .rightSide {

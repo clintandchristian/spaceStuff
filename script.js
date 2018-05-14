@@ -29,8 +29,8 @@ app.getInfo = function () {
             method: "GET",
             data: {
                   api_key: "o9VA2EVoF5h978FUEN79Xxi69MSw6jwsUZOFR1VD",
-                  start_date: "2018-05-13",
-                  end_date: "2018-05-13"
+                  start_date: "2018-05-16",
+                  end_date: "2018-05-16"
             }
       }).then(res => {
             // console.log(res);
@@ -146,7 +146,7 @@ app.displayInfo = function (asteroids) {
       })
       avgSpeedTrue = Math.round((avgSpeedAdded / avgSpeed.length) * 100) / 100;
 
-      avgSpeedAnimation = ((2 - (avgSpeedTrue * 0.1)) * 2)
+      avgSpeedAnimation = ((2 - (avgSpeedTrue * 0.1)) * 4)
       console.log(avgSpeedAnimation);
       $('.averageSpeed').append(`Speed: ${avgSpeedTrue} km/s`);
       $('.averageSpeed').css("animation-duration", `${avgSpeedAnimation}s`)
