@@ -292,6 +292,7 @@ main {
                         }
                         .averageSpeed{
                               margin:0 auto;
+                              border-radius:10px;
                         }
                   }
                   .rightSideInfo{
@@ -320,11 +321,20 @@ main {
                               font-size:16px;
                               margin:10px;
                         }
+                        .warning{
+                              border:2px solid black;
+                              border-radius:10px;
+                        }
+                        .speed{
+                              padding:15px;
+                              border-radius:10px;
+                        }
                         @keyframes caution {
-                              from {background-color: yellow;
-                                    color: black;}
-                              to {background-color: black;
-                                    color: yellow;}
+                              50%{
+                                    border:2px solid yellow;
+                                    color:red;
+                                    
+                              }
                         }
                         .hazardousTrue {
                               animation-name: caution;
@@ -338,13 +348,13 @@ main {
                               font-size: 16px;
                               padding: 15px;
                               margin:10px 0;
-                              line-height:70px;
-                              transition:all 0.4s ease-in-out;
+                              border:2px solid black;
+                              border-radius:4px;
+                              
                         }
                         .selectAnother:hover {
-                              background-color:#89C6AC;
-                              color: black; 
-                              box-shadow: 10px 10px  #89C6AC;
+                              border:2px solid #89C6AC;
+                              color: #89C6AC; 
                         }
 
                   }
@@ -405,6 +415,11 @@ footer{
 .twitterBtn {
       text-align: center;
       padding-bottom: 30px;
+      a{
+
+            text-decoration:none;
+            color:#89C6AC;
+      }
 }
 
 @media(max-width:1293px){
