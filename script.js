@@ -108,8 +108,8 @@ app.displayInfo = function (asteroids) {
                         <h2>${astName}</h2>
                         <p>Estimated Diameter: ${astSize} km</p>
                         <p>Miss Distance: ${astDistance} km</p>
-                        <p class="speedAnimation" style="animation-duration: ${astSpeedAnimation}s">Speed: ${astSpeed} km/s</p>
-                        <p class=${hazardous}>Potentially Hazardous: ${astHazardous}</p>
+                        <p class="speedAnimation speed" style="animation-duration: ${astSpeedAnimation}s">Speed: ${astSpeed} km/s</p>
+                        <p class="${hazardous} warning">Potentially Hazardous: ${astHazardous}</p>
                         <a class="selectAnother"href="#">Select Another Asteroid</a>
                   </div>`
             )
