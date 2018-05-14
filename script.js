@@ -140,7 +140,7 @@ app.displayInfo = function (asteroids) {
       })
       avgSpeedTrue = Math.round((avgSpeedAdded / avgSpeed.length) * 100) / 100;
 
-      avgSpeedAnimation = ((2 - (avgSpeedTrue * 0.1)) * 2)
+      avgSpeedAnimation = ((2 - (avgSpeedTrue * 0.1)) * 4)
       console.log(avgSpeedAnimation);
       $('.averageSpeed').append(`Speed: ${avgSpeedTrue} km/s`);
       $('.averageSpeed').css("animation-duration", `${avgSpeedAnimation}s`)
