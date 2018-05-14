@@ -86,7 +86,7 @@ app.displayInfo = function (asteroids) {
             avgSpeed.push(astSpeedToNumber)
             // console.log(astSpeed)
 
-            astSpeedAnimation = ((2 - (astSpeedToNumber * 0.1)) * 2)
+            astSpeedAnimation = ((2 - (astSpeedToNumber * 0.1)) * 4)
             console.log(astSpeedAnimation);
 
             const astHazardous = arr.is_potentially_hazardous_asteroid
@@ -112,7 +112,7 @@ app.displayInfo = function (asteroids) {
                         <h2>${astName}</h2>
                         <p>Estimated Diameter: ${astSize} km</p>
                         <p>Miss Distance: ${astDistance} km</p>
-                        <p class="speedAnimation" style="animation-duration: ${astSpeedAnimation}s;">Speed: ${astSpeed} km/s</p>
+                        <p class="speedAnimation" style="animation-duration: ${astSpeedAnimation}s">Speed: ${astSpeed} km/s</p>
                         <p class=${hazardous}>Potentially Hazardous: ${astHazardous}</p>
                         <a class="selectAnother"href="#">Select Another Asteroid</a>
                   </div>`
